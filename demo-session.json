@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-03-05T13:08:26.543Z",
+  "lane": "website",
+  "qa_status": "fail",
+  "promotion_status": "local_only",
+  "github_repo": "",
+  "vercel_project": "",
+  "deployment_url": "",
+  "sourceUrl": "https://www.weselectrical.co.uk/",
+  "template": "demo-kwelectricalcontracting-bournemouth",
+  "crawledPages": [
+    "https://www.weselectrical.co.uk/",
+    "https://www.weselectrical.co.uk/index.html",
+    "https://www.weselectrical.co.uk/aboutus.html",
+    "https://www.weselectrical.co.uk/contact.html",
+    "https://www.weselectrical.co.uk/clients.html",
+    "https://www.weselectrical.co.uk/gallery.html",
+    "https://www.weselectrical.co.uk/eicr_cert_glasgow.html",
+    "https://www.weselectrical.co.uk/pattestingglasgow.html"
+  ],
+  "confidence": {
+    "businessName": "high",
+    "phone": "high",
+    "email": "high",
+    "location": "medium",
+    "services": "medium"
+  },
+  "manualAnswers": [],
+  "options": {
+    "tone": "",
+    "priorityServices": ""
+  },
+  "fieldSource": {
+    "businessName": "provided",
+    "phone": "provided",
+    "email": "provided",
+    "location": "provided",
+    "heroHeading": "provided",
+    "heroDescription": "provided",
+    "services": "provided"
+  },
+  "resolvedData": {
+    "sourceUrl": "https://www.weselectrical.co.uk/",
+    "businessName": "Emergency Electrician in Glasgow",
+    "shortName": "EMERG",
+    "nameAccentWord": "Electrician",
+    "primaryPhoneRaw": "01418405236",
+    "primaryPhoneDisplay": "01418 405 236",
+    "primaryEmail": "iain@weselectrical.co.uk",
+    "location": "Southside Glasgow, we understand the unique electrical needs of properties in th",
+    "heroHeading": "Emergency Electrician Glasgow - Tel 0141 840 5236",
+    "heroDescription": "WES Electrical, Electrician in Glasgow, Landlord EICR Glasgow, 24/7 emergency electricians in Glasgow. EICR Certificate Glasgow, Electrician Glasgow Call out Ele Covering West End Glasgow, Southside Glasgow & Paisley / Renfrew, Electrician near me Glasgow Call 0141 840 5236.",
+    "services": [
+      "Commercial",
+      "Emergency Repairs",
+      "Kitchen",
+      "New Build"
+    ],
+    "trustSignals": [
+      "Fully Insured",
+      "Trusted",
+      "Certified",
+      "Testimonials",
+      "Rated"
+    ],
+    "whatsappDigits": ""
+  }
+}
