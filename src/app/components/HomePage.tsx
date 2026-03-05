@@ -62,16 +62,16 @@ export function HomePage() {
             }}
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "rgba(199,32,42,0.2)", border: "1px solid rgba(199,32,42,0.45)" }}>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-5 sm:mb-6" style={{ backgroundColor: "rgba(199,32,42,0.2)", border: "1px solid rgba(199,32,42,0.45)" }}>
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: config.brand.accent }} />
-              <span style={{ fontSize: "15px", color: "#FFEAF0", fontWeight: 500 }}>{config.hero.badge}</span>
+              <span style={{ fontSize: "clamp(11px, 2.8vw, 15px)", color: "#FFEAF0", fontWeight: 500 }}>{config.hero.badge}</span>
             </div>
             <h1 className="m-0 mb-5 text-white" style={{ fontFamily: config.brand.fonts.serif, fontSize: "clamp(42px, 5.4vw, 68px)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-1px", textShadow: "0 2px 14px rgba(0,0,0,0.35)" }}>
               {config.hero.headline} <br />
@@ -115,7 +115,7 @@ export function HomePage() {
                 transition={{ duration: 0.5 }}
               >
                 <p className="m-0" style={{ color: "#F4F8FF", fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 800, lineHeight: 1 }}>{stat.value}</p>
-                <p className="m-0 mt-1" style={{ fontSize: "15px", color: "rgba(244,248,255,0.88)", fontWeight: 600 }}>{stat.label}</p>
+                <p className="m-0 mt-1" style={{ fontSize: "clamp(12px, 2.8vw, 15px)", color: "rgba(244,248,255,0.88)", fontWeight: 600 }}>{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -124,14 +124,14 @@ export function HomePage() {
 
       {/* Services Section */}
       <section style={{ backgroundColor: config.brand.background }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-10 sm:mb-14"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(199,32,42,0.1)", border: "1px solid rgba(199,32,42,0.28)", color: "#B11F2A", fontSize: "15px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
+            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4" style={{ backgroundColor: "rgba(199,32,42,0.1)", border: "1px solid rgba(199,32,42,0.28)", color: "#B11F2A", fontSize: "clamp(11px, 2.8vw, 15px)", fontWeight: 600, letterSpacing: "0.8px", textTransform: "uppercase" }}>
               {hp.servicesSection.badge}
             </span>
             <h2 className="m-0 mb-4" style={{ fontFamily: config.brand.fonts.serif, fontSize: "clamp(32px, 3.9vw, 46px)", fontWeight: 700, color: config.brand.light, letterSpacing: "-0.5px" }}>
@@ -190,7 +190,7 @@ export function HomePage() {
 
       {/* Why Choose Us */}
       <section style={{ backgroundColor: config.brand.white }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -198,7 +198,7 @@ export function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(199,32,42,0.1)", border: "1px solid rgba(199,32,42,0.28)", color: "#B11F2A", fontSize: "15px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
+              <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4" style={{ backgroundColor: "rgba(199,32,42,0.1)", border: "1px solid rgba(199,32,42,0.28)", color: "#B11F2A", fontSize: "clamp(11px, 2.8vw, 15px)", fontWeight: 600, letterSpacing: "0.8px", textTransform: "uppercase" }}>
                 Why {config.business.name}
               </span>
               <h2 className="m-0 mb-5" style={{ fontFamily: config.brand.fonts.serif, fontSize: "clamp(32px, 3.9vw, 44px)", fontWeight: 700, color: config.brand.light, lineHeight: 1.2 }}>
@@ -260,14 +260,14 @@ export function HomePage() {
 
       {/* Testimonials */}
       <section style={{ backgroundColor: config.brand.background }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="text-center mb-10 sm:mb-14"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(199,32,42,0.1)", border: "1px solid rgba(199,32,42,0.28)", color: "#B11F2A", fontSize: "15px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
+            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4" style={{ backgroundColor: "rgba(199,32,42,0.1)", border: "1px solid rgba(199,32,42,0.28)", color: "#B11F2A", fontSize: "clamp(11px, 2.8vw, 15px)", fontWeight: 600, letterSpacing: "0.8px", textTransform: "uppercase" }}>
               {hp.testimonialsSection.badge}
             </span>
             <h2 className="m-0" style={{ fontFamily: config.brand.fonts.serif, fontSize: "clamp(32px, 3.9vw, 44px)", fontWeight: 700, color: config.brand.light }}>
@@ -319,7 +319,7 @@ export function HomePage() {
 
       {/* About / Team */}
       <section style={{ backgroundColor: config.brand.white }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -339,7 +339,7 @@ export function HomePage() {
               transition={{ duration: 0.6 }}
               className="order-1 lg:order-2"
             >
-              <span className="inline-block px-4 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(199,32,42,0.1)", border: "1px solid rgba(199,32,42,0.28)", color: "#B11F2A", fontSize: "15px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
+              <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4" style={{ backgroundColor: "rgba(199,32,42,0.1)", border: "1px solid rgba(199,32,42,0.28)", color: "#B11F2A", fontSize: "clamp(11px, 2.8vw, 15px)", fontWeight: 600, letterSpacing: "0.8px", textTransform: "uppercase" }}>
                 {hp.teamSection.badge}
               </span>
               <h2 className="m-0 mb-5" style={{ fontFamily: config.brand.fonts.serif, fontSize: "clamp(32px, 3.9vw, 44px)", fontWeight: 700, color: config.brand.light, lineHeight: 1.2 }}>
@@ -375,7 +375,7 @@ export function HomePage() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, rgba(8,17,11,0.28) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(8,17,11,0.18) 0%, transparent 50%)" }} />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -388,7 +388,7 @@ export function HomePage() {
             }}
           >
             <span
-              className="inline-block px-4 py-1.5 rounded-full mb-5"
+              className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-4 sm:mb-5"
               style={{
                 backgroundColor: "rgba(199,32,42,0.12)",
                 border: "1px solid rgba(199,32,42,0.35)",

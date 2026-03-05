@@ -16,10 +16,10 @@ export function RecruitmentPage() {
   return (
     <div style={{ fontFamily: config.brand.fonts.sans }}>
       {/* Hero */}
-      <section className="py-20" style={{ backgroundColor: config.brand.primary }}>
+      <section className="py-14 sm:py-20" style={{ backgroundColor: config.brand.primary }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-block px-4 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(199,32,42,0.18)", color: "#FFEAF0", fontSize: "13px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
+            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4" style={{ backgroundColor: "rgba(199,32,42,0.18)", color: "#FFEAF0", fontSize: "clamp(11px, 2.6vw, 13px)", fontWeight: 600, letterSpacing: "0.8px", textTransform: "uppercase" }}>
               {rp.badge}
             </span>
             <h1 className="m-0 mb-2 text-white" style={{ fontFamily: config.brand.fonts.serif, fontSize: "clamp(32px, 4vw, 50px)", fontWeight: 700, lineHeight: 1.15 }}>

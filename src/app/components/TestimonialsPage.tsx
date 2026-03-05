@@ -13,10 +13,10 @@ export function TestimonialsPage() {
   return (
     <div style={{ fontFamily: config.brand.fonts.sans }}>
       {/* Hero */}
-      <section className="py-20" style={{ backgroundColor: config.brand.primary }}>
+      <section className="py-14 sm:py-20" style={{ backgroundColor: config.brand.primary }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(199,32,42,0.18)", color: "#FFEAF0", fontSize: "15px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
+            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4" style={{ backgroundColor: "rgba(199,32,42,0.18)", color: "#FFEAF0", fontSize: "clamp(11px, 2.8vw, 15px)", fontWeight: 600, letterSpacing: "0.8px", textTransform: "uppercase" }}>
               {tp.badge}
             </span>
             <h1 className="m-0 mb-4 text-white" style={{ fontFamily: config.brand.fonts.serif, fontSize: "clamp(36px, 4.6vw, 58px)", fontWeight: 700 }}>
@@ -40,7 +40,7 @@ export function TestimonialsPage() {
 
       {/* Testimonials Grid */}
       <section style={{ backgroundColor: config.brand.background }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
               <motion.div

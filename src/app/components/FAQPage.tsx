@@ -11,11 +11,11 @@ export function FAQPage() {
 
   return (
     <div style={{ fontFamily: config.brand.fonts.sans }}>
-      <section className="py-20" style={{ backgroundColor: config.brand.primary }}>
+      <section className="py-14 sm:py-20" style={{ backgroundColor: config.brand.primary }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <span
-              className="inline-block px-4 py-1.5 rounded-full mb-4"
+              className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4"
               style={{
                 backgroundColor: "rgba(199,32,42,0.18)",
                 border: "1px solid rgba(199,32,42,0.45)",
@@ -48,7 +48,7 @@ export function FAQPage() {
       </section>
 
       <section style={{ backgroundColor: config.brand.background }}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="space-y-4">
             {fp.items.map((item, index) => {
               const open = openIndex === index;

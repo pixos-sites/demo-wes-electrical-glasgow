@@ -13,10 +13,10 @@ export function BlogPage() {
   return (
     <div style={{ fontFamily: config.brand.fonts.sans }}>
       {/* Hero */}
-      <section className="py-20" style={{ backgroundColor: config.brand.primary }}>
+      <section className="py-14 sm:py-20" style={{ backgroundColor: config.brand.primary }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(199,32,42,0.18)", color: "#FFEAF0", fontSize: "13px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
+            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4" style={{ backgroundColor: "rgba(199,32,42,0.18)", color: "#FFEAF0", fontSize: "clamp(11px, 2.6vw, 13px)", fontWeight: 600, letterSpacing: "0.8px", textTransform: "uppercase" }}>
               {bp.badge}
             </span>
             <h1 className="m-0 mb-4 text-white" style={{ fontFamily: config.brand.fonts.serif, fontSize: "clamp(32px, 4vw, 50px)", fontWeight: 700 }}>
@@ -31,13 +31,13 @@ export function BlogPage() {
 
       {/* Blog Grid */}
       <section style={{ backgroundColor: config.brand.background }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           {/* Featured Post */}
           <motion.article
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden group cursor-pointer"
+            className="mb-8 sm:mb-12 grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden group cursor-pointer"
             style={{ backgroundColor: config.brand.white, border: `1px solid ${config.brand.border}`, boxShadow: "0 4px 20px rgba(0,0,0,0.04)" }}
           >
             <div className="h-[280px] lg:h-auto overflow-hidden">

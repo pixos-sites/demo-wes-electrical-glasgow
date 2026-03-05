@@ -12,19 +12,52 @@ const panelGradient = "linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(2
 export function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", service: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const web3formsKey = (config.web3forms_key ?? "").trim();
+  const hasWeb3FormsKey =
+    web3formsKey.length > 0 &&
+    !/REPLACE_WITH|YOUR_WEB3FORMS_ACCESS_KEY/i.test(web3formsKey);
+  const fallbackEmail = (config.business.email ?? "").trim();
+  const hasFallbackEmail = fallbackEmail.length > 0;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        access_key: config.web3forms_key,
-        subject: `New Enquiry from ${config.business.name} Website`,
-        ...formData,
-      }),
-    });
-    if (response.ok) setSubmitted(true);
+    setSubmitError("");
+
+    try {
+      if (hasWeb3FormsKey) {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            access_key: web3formsKey,
+            subject: `New Enquiry from ${config.business.name} Website`,
+            ...formData,
+          }),
+        });
+        if (!response.ok) throw new Error("Web3Forms submit failed");
+      } else {
+        if (!hasFallbackEmail) throw new Error("No email fallback configured");
+        const subject = encodeURIComponent(`New Enquiry from ${config.business.name} Website`);
+        const body = encodeURIComponent(
+          [
+            `Name: ${formData.name}`,
+            `Email: ${formData.email}`,
+            `Phone: ${formData.phone || "-"}`,
+            `Service: ${formData.service || "-"}`,
+            "",
+            "Message:",
+            formData.message,
+          ].join("\n"),
+        );
+        window.location.href = `mailto:${fallbackEmail}?subject=${subject}&body=${body}`;
+      }
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    } catch {
+      setSubmitError("Couldn't send your enquiry online right now. Please call us and we'll help immediately.");
+    }
   };
 
   const contactInfo = [
@@ -49,10 +82,10 @@ export function ContactPage() {
   return (
     <div style={{ fontFamily: config.brand.fonts.sans }}>
       {/* Hero */}
-      <section className="py-20" style={{ backgroundColor: config.brand.primary }}>
+      <section className="py-14 sm:py-20" style={{ backgroundColor: config.brand.primary }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(199,32,42,0.18)", color: "#FFEAF0", fontSize: "15px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
+            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4" style={{ backgroundColor: "rgba(199,32,42,0.18)", color: "#FFEAF0", fontSize: "clamp(11px, 2.8vw, 15px)", fontWeight: 600, letterSpacing: "0.8px", textTransform: "uppercase" }}>
               {cp.badge}
             </span>
             <h1 className="m-0 mb-4 text-white" style={{ fontFamily: config.brand.fonts.serif, fontSize: "clamp(36px, 4.6vw, 58px)", fontWeight: 700 }}>
@@ -67,7 +100,7 @@ export function ContactPage() {
 
       {/* Content */}
       <section style={{ backgroundColor: config.brand.background }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Contact Info */}
             <motion.div
@@ -223,6 +256,11 @@ export function ContactPage() {
                         <Send size={16} />
                         {cp.sendBtn}
                       </button>
+                      {submitError ? (
+                        <p className="m-0" style={{ fontSize: "14px", color: "#B11F2A", lineHeight: 1.6 }}>
+                          {submitError}
+                        </p>
+                      ) : null}
                     </form>
                   </>
                 )}

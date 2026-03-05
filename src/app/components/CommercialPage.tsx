@@ -15,10 +15,10 @@ export function CommercialPage() {
   return (
     <div style={{ fontFamily: config.brand.fonts.sans }}>
       {/* Hero */}
-      <section className="py-20" style={{ backgroundColor: config.brand.primary }}>
+      <section className="py-14 sm:py-20" style={{ backgroundColor: config.brand.primary }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(199,32,42,0.18)", border: "1px solid rgba(199,32,42,0.45)", color: "#FFEAF0", fontSize: "15px", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase" }}>
+            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-3 sm:mb-4" style={{ backgroundColor: "rgba(199,32,42,0.18)", border: "1px solid rgba(199,32,42,0.45)", color: "#FFEAF0", fontSize: "clamp(11px, 2.8vw, 15px)", fontWeight: 600, letterSpacing: "0.8px", textTransform: "uppercase" }}>
               {cp.badge}
             </span>
             <h1 className="m-0 mb-4 text-white" style={{ fontFamily: config.brand.fonts.serif, fontSize: "clamp(36px, 4.6vw, 58px)", fontWeight: 700, lineHeight: 1.15 }}>
@@ -35,7 +35,7 @@ export function CommercialPage() {
 
       {/* Content */}
       <section style={{ backgroundColor: config.brand.background }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="m-0 mb-5" style={{ fontFamily: config.brand.fonts.serif, fontSize: "32px", fontWeight: 700, color: config.brand.light }}>
